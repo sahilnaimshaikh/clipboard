@@ -1,0 +1,5 @@
+aidlc-docs/
+.aidlc/
+.aidlc-rule-details/
+.kiro/aws-aidlc-rule-details/
+.amazonq/aws-aidlc-rule-details/

@@ -5,3 +5,7 @@ chrome.runtime.onMessage.addListener((message) => {
     addHistoryItem(message.text);
   }
 });
+
+chrome.action.onClicked.addListener((tab) => {
+  chrome.sidePanel.open({ windowId: tab.windowId });
+});

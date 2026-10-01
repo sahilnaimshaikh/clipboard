@@ -27,10 +27,10 @@ A Chrome extension that automatically saves everything you copy so you can searc
 Just copy any text or link on any webpage (Cmd/Ctrl+C, or right-click → Copy). It's saved to the **Text** tab instantly — no extra steps.
 
 ### Viewing your history
-Click the extension icon in the toolbar to open the popup and see your saved items, most recent first (pinned items always float to the top).
+Click the extension icon in the toolbar to open the side panel and see your saved items, most recent first (pinned items always float to the top). The panel stays docked and open even if you switch to another application — handy for copying a title and link from elsewhere, then coming back to paste them in.
 
 ### Adding something manually
-1. Click the **+** button in the popup header.
+1. Click the **+** button in the side panel header.
 2. (Optional) Give it a title — useful for links, e.g. "Prod Kibana dashboard".
 3. Type or paste the content into the text box.
 4. Click **Save**.
@@ -58,9 +58,9 @@ Type into the search box to filter the current tab's items by their text or titl
 | `manifest.json` | Chrome extension manifest (Manifest V3) |
 | `content.js` | Runs on every page; detects copy events and forwards the copied text |
 | `background.js` | Service worker; receives copy events and saves them to storage |
-| `storage.js` | Shared storage helpers (tabs, history items, pin/delete/clear) used by both the background worker and the popup |
-| `popup.html` / `popup.css` / `popup.js` | The popup UI you see when clicking the toolbar icon |
+| `storage.js` | Shared storage helpers (tabs, history items, pin/delete/clear) used by both the background worker and the side panel |
+| `sidepanel.html` / `sidepanel.css` / `sidepanel.js` | The side panel UI you see when clicking the toolbar icon — stays open even when you switch to another application |
 
 ## Privacy
 
-All data is stored locally via `chrome.storage.local` and never leaves your browser. The extension requests only the `storage` permission and content-script access needed to detect copy events on pages.
+All data is stored locally via `chrome.storage.local` and never leaves your browser. The extension requests only the `storage` and `sidePanel` permissions, plus content-script access needed to detect copy events on pages.

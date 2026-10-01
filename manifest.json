@@ -3,7 +3,7 @@
   "name": "Clipboard History",
   "version": "1.0.0",
   "description": "Automatically saves everything you copy so you can search, pin, and reuse it later.",
-  "permissions": ["storage"],
+  "permissions": ["storage", "sidePanel"],
   "background": {
     "service_worker": "background.js"
   },
@@ -15,7 +15,9 @@
     }
   ],
   "action": {
-    "default_popup": "popup.html",
     "default_title": "Clipboard History"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
   }
 }
